@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { GameBanner } from './components/GameBanner';
+import { DialogForm } from './components/DialogForm';
 import logo from './assets/logo-nlw-esports.svg';
-import { CreateAdBanner } from './components/CreateAdBanner';
 
 interface Game {
   id: string;
@@ -37,17 +37,17 @@ export default function App() {
         {games.map((game) => {
           return (
             <GameBanner
-              key={game.id}              
+              key={game.id}
               bannerUrl={game.bannerUrl}
               title={game.title}
               adsCount={game._count.ads}
               link={`/games/${game.id}`}
             />
           )
-        })}       
+        })}
 
       </div>
-      <CreateAdBanner />
+      <DialogForm />
     </div>
   )
 }
