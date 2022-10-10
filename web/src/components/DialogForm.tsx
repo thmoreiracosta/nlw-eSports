@@ -1,7 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { GameController } from "phosphor-react";
+import * as Checkbox from "@radix-ui/react-checkbox";
+import { Check, GameController } from "phosphor-react";
 import { CreateAdBanner } from "./CreateAdBanner";
 import { Input } from "./FormInput/Input";
+import { SelectGame } from "./SelectGame";
+
 
 export function DialogForm() {
   return (
@@ -20,6 +23,7 @@ export function DialogForm() {
                   type="text"
                   placeholder="Selecione o game que deseja jogar"
                 />
+                <SelectGame />
               </div>
               <div className="flex flex-col gap-2 ">
                 <label htmlFor="name">Seu nome (ou nickname)</label>
@@ -92,8 +96,16 @@ export function DialogForm() {
                 </div>
               </div>
 
-              <div className="mt-2 flex gap-2 text-small">
-                <Input type="checkbox" />
+              <div className="mt-2 flex items-center gap-2 text-sm">
+                <Checkbox.Root
+                  className="w-6 h-6 p-1 rounded bg-zinc-900"
+                >
+                  <Checkbox.Indicator>
+                    <Check
+                      className="w-4 h-4 text-emerald-400 font-bold"
+                    />
+                  </Checkbox.Indicator>
+                </Checkbox.Root>
                 Costumo me conectar ao chat de voz
               </div>
 
